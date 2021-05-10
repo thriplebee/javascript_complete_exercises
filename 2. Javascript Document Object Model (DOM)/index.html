@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        /* Reset */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        /* Navigation */
+        nav{
+            background-color: #ebca14;
+            max-width: 400px;
+            margin: 0 auto;
+            height: 50px;
+            padding-left: 20px;
+            line-height: 50px;
+        }
+
+        /* Container */
+        .container .frm,
+        .container .list{
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        /* Form */
+        .container form{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 20px 0px;
+        }
+
+        .container form input,
+        .container form select{
+            height: 30px;
+        }
+
+        .container button{
+            padding: 7px 20px;
+            border: none;
+            background-color: #ebca14;
+            cursor: pointer;
+        }
+
+        /* Items */
+        .container .list ul{
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .container .list ul li{
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            margin-bottom: 2px;
+        }
+
+        /* Bubbling & Capturing */
+        #myDiv1, #myDiv2 {
+            background-color: coral;
+            padding: 50px;
+        }
+
+        #myP1, #myP2 {
+            background-color: white;
+            font-size: 20px;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+
+        /* Event Types */
+        #box{
+            width: 500px;
+            height: 300px;
+            background-color: #c0b25f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Naviagtion -->
+    <nav id="navbar">
+        <h2 id="hdt">Shopping List</h2>
+    </nav>
+    <!-- Container -->
+    <div class="container">
+        <div class="frm">
+            <h3 style="text-transform: uppercase;" id="frmt">Add Items</h3>
+            <form action="">
+                <input type="text">
+                <select>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="out"></div>
+        </div>
+        <div class="list">
+            <h3>Shopping Items</h3>
+            <ul id="li-items">
+                <li class="items">Item 1</li>
+                <li class="items">Item 2</li>
+                <li class="items">Item 3</li>
+                <li class="items">Item 4</li>
+                <li class="items">Item 5</li>
+            </ul>
+            <div>
+                <h2>testing...</h2>
+            </div>
+        </div>
+        <div id="output"></div>
+        <!-- Events -->
+        <!-- <button onclick="btnClick(this.textContent)" class="c-btn">Click Here</button> -->
+        <button id="c-btn">Click Here</button>
+        <button id="i-btn">Change Items</button>
+        <button id="e-btn" class="sample btn kvc">Sample Button</button>
+
+        <!-- Bubbling & Capturing -->
+        <div id="myDiv1">
+            <h2>Bubbling:</h2>
+            <p id="myP1">Click me!</p>
+        </div><br>
+
+        <div id="myDiv2">
+            <h2>Capturing:</h2>
+            <p id="myP2">Click me!</p>
+        </div><br>
+
+        <!-- Remove Event Listener -->
+        <button id="ev-btn">Click the Button</button>
+        <button id="rm-btn">Remove the Event</button><br><br>
+
+        <!-- Event Types -->
+        <button id="t-btn">Events</button><br><br>
+        <div id="box">
+            <h2>How are you!</h2>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="./scripts3.js"></script>
+</body>
+</html>
